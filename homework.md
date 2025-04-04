@@ -1,0 +1,23 @@
+- Create a repository
+- Initialize the repository
+- node_modules, package.json, package-lock.json
+- install express
+- create a server
+- listen to port 7777
+- write request handler for /test, /hello
+- install nodemon and update scripts inside package.json
+- what are dependencies
+- what is use of "-g" and "-D" while npm install
+- what is the difference between npm install and npm install --save
+- 
+- 
+Dt: 05-04-2025 (Saturday)
+
+- initliaze git
+- .gitignore
+- create a remote repo on github
+- push all code to remote origin
+- play with routes and route extensions ex: /hello, /hello/2, /xyz, /
+- order of the routes matters a lot
+- install postman app and make a workspace/collection > test API call
+- write logic to handle GET, POST, PATCH, DELETE, API calls and test them on Postman
