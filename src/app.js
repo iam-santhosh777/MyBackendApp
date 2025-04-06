@@ -1,31 +1,37 @@
 const express = require('express');
+const connectDb = require("./config/database");
 const app = express();
-const {adminAuth, userAuth} = require("./middlewares/auth");
+const User = require("./models/user");
 
+app.post("/signup", async (req, res) => {
+    // creating a new instance of the  user model
+    const user = new User({
+        firstName: "Divyanshu",
+        lastName: "Tiwari",
+        age: 25,
+        emailId: "thisis.santhosh777@gmail.com",
+        gender: "male",
+        city: "Chennai",
+        state: "Tamil Nadu",
+        password: "Divya123",
+    });
 
-app.get("/getUserData", (req, res) => {
-
-
-    // try{
-        throw new Error("Something went wrong");
-        // Logic of DB call and get user data
-        res.send("User Data Sent");
-    // }
-    // catch(err) {
-    //     console.error(err);
-    //     res.status(500).send("Internal Server Error");
-    // }
-    
-})
-
-// kind of a wildcard
-app.use("/", (err, req, res, next) => {
-    if(err) {
-        console.error(err);
-        res.status(500).send("Internal Server Error");
+    try{
+        await user.save()
+        console.log(user);
+        res.send("User Created Successfully");
+    }
+    catch (err) {
+        console.error("Failed to create user", err);
     }
 })
 
-app.listen(7777, () => {
-    console.log('Listening on port 7777');
+connectDb().then(()=>{
+    console.log("Connected to DB Successfully");
+    app.listen(7777, () => {
+        console.log('Listening on port 7777');
+    })
+}).catch((err)=>{
+    console.error("Failed to connect to DB", err);
 })
+

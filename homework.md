@@ -38,4 +38,13 @@ Dt: 06-04-2025 (Sunday)
 - write a dummmy auth middleware for admin
 - write a dummy auth middleware for user routes, except, /user/login
 - erro handling using app.use("/", (err, req, res, next)) = {};
+
+- create a free cluster on MongoDb Official website (Mongo Atlas)
+- installing mongoose library from npm
+- connecting application to database "connection-url"/devTinder
+- changing the order of execution means connecting database first then server (port no 7777)
+- create a user schema & user model
+- create POST/signup API to add dat to database
+- push some documents using API calls from postman
+- error handling using try and catch
 - 
