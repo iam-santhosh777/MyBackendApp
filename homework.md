@@ -26,3 +26,11 @@ Dt: 05-04-2025 (Saturday)
 - use of regex in routes like [/a/, /.*fly$/]
 - reading query params in the routes
 - reading dynamic routes
+- 
+Dt: 06-04-2025 (Sunday)
+- Multiple Route Handlers - play with the code
+- next ()
+- next function and errors along with res.send()
+- app.use("/user", RH, [RH2, RH3], RH4, RH5)
+- read more about middle ware
+- how express js basically handles request behind the scenes
