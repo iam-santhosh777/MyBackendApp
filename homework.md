@@ -37,3 +37,5 @@ Dt: 06-04-2025 (Sunday)
 - differenec between app.use() and app.all()
 - write a dummmy auth middleware for admin
 - write a dummy auth middleware for user routes, except, /user/login
+- erro handling using app.use("/", (err, req, res, next)) = {};
+- 
