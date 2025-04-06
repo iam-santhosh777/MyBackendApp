@@ -1,33 +1,27 @@
 const express = require('express');
 const app = express();
+const {adminAuth, userAuth} = require("./middlewares/auth");
 
-app.use("/user", (req, res, next) => {
-console.log("Logging the first user response");
-next();
-//res.send("User 1");
+app.use("/admin", adminAuth)
 
-}, 
-(req, res, next) => {
-console.log("Logging the second user response");
-//res.send("User 2");
-next();
-},
-(req, res, next) => {
-console.log("Logging the third user response");
-//res.send("User 3");
-next();
-},
-(req, res, next) => {
-console.log("Logging the fourth user response");
-//res.send("User 4");
-next()
-},
-(req, res, next) => {
-console.log("Logging the fifth user response");
-res.send("User 5");
-}
-)
 
+
+app.post("/user/login", (req, res) => {
+    res.send("User Logged In");
+})
+
+app.get("/user/data", userAuth,  (req, res) => {
+    res.send("Get All Users");
+    next()
+})
+
+app.get("/admin/getAllData", (req, res) => {
+    res.send("Get All Data");
+})
+app.get("/admin/deleteUser", ((req, res) => {
+    // Logic of checking if the request is authorized
+    res.send("User Deleted");
+}))
 
 app.listen(7777, () => {
     console.log('Listening on port 7777');

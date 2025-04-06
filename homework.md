@@ -34,3 +34,6 @@ Dt: 06-04-2025 (Sunday)
 - app.use("/user", RH, [RH2, RH3], RH4, RH5)
 - read more about middle ware
 - how express js basically handles request behind the scenes
+- differenec between app.use() and app.all()
+- write a dummmy auth middleware for admin
+- write a dummy auth middleware for user routes, except, /user/login
